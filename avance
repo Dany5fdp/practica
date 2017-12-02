@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h> 
+#include <conio.h>
+	
+
+int main(){
+
+	FILE *a1;
+	FILE *a2;
+	FILE *a3;
+	
+	int i=0;
+	int j=0;
+	
+	char principal[100];
+	char k;	
+	
+	a1 = fopen ("5fdp.txt","r");
+	a2 = fopen("dltspaces.txt","w");
+	a3 = fopen("strrev.txt","w");
+	
+		if(a1!= NULL) {
+ 			printf("El archivo se abrio correctamente.\n");
+		}	
+				printf("\nContenido del archivo:\n\n");
+ 					while(feof(a1) == 0) {
+ 						fgets(principal,1000,a1);
+ 							printf("%s",principal);
+ 					}
+
+		while(!feof(a1)){
+			k=fgetc(a1);
+				if(k!=' ')i++;
+				
+		}
+		
+		fclose(a1);
+	
+		a2 = fopen("dltspaces.txt","w");
+			fprintf(a2 ," %s ", i);
+		
+		
+		while(feof(a2)== 0) {
+ 			fgets(principal,1000,a2);
+ 				printf("%s",a2);
+ 					fclose(a2); 
+		}
+
+return 0;
+}
